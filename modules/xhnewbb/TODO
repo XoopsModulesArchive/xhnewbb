@@ -1,0 +1,59 @@
+xhnewbbの開発は終了してます。
+機能リクエストはd3forumにどうぞ。
+
+
+
+●メモ
+
+・Edit (post_idベース)
+
+$_GET['post_id'] から $forumpostオブジェクトを生成 topic_id, $forum を得る
+$topic_id でlockチェック
+process_postid2forum.inc.php
+
+$forum から $forumdata配列を生成 投稿権限をチェック
+process_forum2postperm.inc.php
+
+edit ならではのチェック
+（本人か$isadminormod以外はdie）
+
+フォーム初期状態の一連の変数を取得
+
+header.php , アサイン , footer.php
+display_post_form.inc.php
+
+
+・Reply (post_idベース)
+
+$_GET['post_id'] から $forumpostオブジェクトを生成 topic_id, $forum を得る
+$topic_id でlockチェック
+process_postid2forum.inc.php
+
+$forum から $forumdata配列を生成 投稿権限をチェック
+process_forum2postperm.inc.php
+
+フォームリファレンス用の変数を取得 (mes,sub,name,postdateをreferenceとする)
+
+header.php , アサイン , footer.php
+display_post_form.inc.php
+
+
+・newtopic (forumベース)
+
+$_GET['forum']から$forum取得
+
+$forum から $forumdata配列を生成 投稿権限をチェック
+process_forum2postperm.inc.php
+
+フォーム初期状態設定
+
+header.php , アサイン , footer.php
+display_post_form.inc.php
+
+
+・post (共通処理)
+
+post_idがある->editだとして、$post_idから process_postid2forum.inc.php
+pidがある->editだとして、$post_idから process_postid2forum.inc.php
+
+

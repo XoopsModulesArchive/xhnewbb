@@ -1,0 +1,23 @@
+<div class="xhnewbb">
+<h1><{$smarty.const._DELETE}></h1>
+<div class="breadcrumbs"><a href="<{$xoops_url}>/modules/xhnewbb/index.php"><{$forum_index_title}></a>&nbsp;-&nbsp;<a href="<{$mod_url}>/viewallforum.php"><{$lang_alltopicsindex}></a></div>
+
+<div id="forum_reference" class="outer">
+	<div class="head"><{$reference_subject}></div>
+	<div class="even"><{$smarty.const._MD_XHNEWBB_BY}> <{$reference_name}> <{$smarty.const._MD_XHNEWBB_ON}> <{$reference_date}></div>
+	<div class="odd"><{$reference_message}></div>
+	<div class="even"><{$smarty.const._MD_XHNEWBB_CHILDREN_COUNT}> : <{$children_count}></div>
+</div>
+
+<form name="deleteposts" id="deleteposts" action="delete.php?post_id=<{$post_id}>" method="post">
+
+	<{if $children_count}>
+		<{$smarty.const._MD_XHNEWBB_AREUSUREDEL}>
+	<{else}>
+		<{$smarty.const._MD_XHNEWBB_AREUSUREDELONE}>
+	<{/if}>
+	<br />
+	<input type="submit" name="deletepostsok" id="deletepostsok" value="<{$smarty.const._DELETE}>" />
+
+</form>
+</div>

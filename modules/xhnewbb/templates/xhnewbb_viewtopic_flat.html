@@ -1,0 +1,95 @@
+<!-- start module contents -->
+<div class="xhnewbb">
+<h1><{$forum_name}>&nbsp;:&nbsp;<{$topic_title}></h1>
+
+<div class="breadcrumbs"><a href='<{$mod_url}>/index.php'><{$lang_forum_index}></a>&nbsp;-&nbsp;<a href="<{$mod_url}>/viewallforum.php"><{$lang_alltopicsindex}></a>&nbsp;&gt;&nbsp;<a href='<{$mod_url}>/viewforum.php?forum=<{$forum_id}>'><{$forum_name}></a>&nbsp;&gt;&nbsp;<{$topic_title}></div>
+
+<ul class="post">
+	<li><{$forum_post_or_register}></li>
+</ul>
+
+<!-- start topic thread -->
+
+<div class="topicviewctrl">
+	<div class="topicorderctrl"><{if $uid > 0 }>
+	<{if $allow_mark}>
+		<{if $u2t_marked}>
+		<a href="<{$mod_url}>/viewtopic.php?topic_id=<{$topic_id}>&amp;viewmode=flat&amp;order=<{$order_current}>&amp;change_u2t_mark=off">
+		<img src="<{$mod_url}>/images/mark_on.gif" alt="<{$smarty.const._MD_XHNEWBB_MARK_TURNOFF}>" title="<{$smarty.const._MD_XHNEWBB_MARK_TURNOFF}>" /></a>
+		<{else}>
+		<a href="<{$mod_url}>/viewtopic.php?topic_id=<{$topic_id}>&amp;viewmode=flat&amp;order=<{$order_current}>&amp;change_u2t_mark=on">
+		<img src="<{$mod_url}>/images/mark_off.gif" alt="<{$smarty.const._MD_XHNEWBB_MARK_TURNON}>" title="<{$smarty.const._MD_XHNEWBB_MARK_TURNON}>" /></a>
+		<{/if}>
+	<{/if}>
+	<{/if}>
+	<a href="<{$mod_url}>/viewtopic.php?topic_id=<{$topic_id}>&amp;viewmode=thread"><{$lang_threaded}></a> | <a href="<{$mod_url}>/viewtopic.php?topic_id=<{$topic_id}>&amp;viewmode=flat&amp;order=<{$order_other}>"><{$lang_order_other}></a></div>
+
+	<div class="topicctrl">
+		<{if $prev_topic_id}>
+		<a href="<{$mod_url}>/viewtopic.php?topic_id=<{$prev_topic_id}>&amp;viewmode=flat&amp;order=<{$order_current}>"><{$lang_prevtopic}></a> |
+		<{/if}>
+		<{if $next_topic_id}>
+		<a href="<{$mod_url}>/viewtopic.php?topic_id=<{$next_topic_id}>&amp;viewmode=flat&amp;order=<{$order_current}>"><{$lang_nexttopic}></a> |
+		<{/if}>
+		<a href="#threadbottom"><{$lang_bottom}></a>
+	</div>
+</div>
+
+<div class="hd"><a name="threadtop" id="threadtop"><{$upper_topic}></a></div>
+
+<table class="outer">
+<thead>
+<tr>
+	<th class="poster"><{$lang_poster}></th>
+	<th><{$lang_thread}></th>
+</tr>
+</thead>
+<{if $forum_page_nav}>
+<tr>
+	<td colspan="2" class="even pagenav"><{$forum_page_nav}></td>
+</tr>
+<{/if}>
+<{foreach item=topic_post from=$topic_posts}>
+<{include file="db:xhnewbb_thread.html" topic_post=$topic_post}>
+<{/foreach}>
+<{if $forum_page_nav}>
+<tr class="foot">
+	<td colspan="2" class="pagenav"><{$forum_page_nav}></td>
+</tr>
+<{/if}>
+</table>
+
+<div class="hd"><a name="threadbottom" id="threadbottom"><{$lower_topic}></a></div>
+
+<div class="topicviewctrl">
+	<div class="topicorderctrl">
+		<a href="<{$mod_url}>/viewtopic.php?topic_id=<{$topic_id}>&amp;viewmode=thread"><{$lang_threaded}></a>
+	</div>
+	<div class="topicctrl">
+		<{if $prev_topic_id}>
+		<a href="<{$mod_url}>/viewtopic.php?topic_id=<{$prev_topic_id}>&amp;viewmode=flat&amp;order=<{$order_current}>"><{$lang_prevtopic}></a> |
+		<{/if}>
+		<{if $next_topic_id}>
+		<a href="<{$mod_url}>/viewtopic.php?topic_id=<{$next_topic_id}>&amp;viewmode=flat&amp;order=<{$order_current}>"><{$lang_nexttopic}></a> |
+		<{/if}>
+		<a href="#threadtop"><{$lang_top}></a>
+	</div>
+</div>
+
+<hr class="threadview" />
+<!-- end topic thread -->
+
+<div class="outer even footctrl">
+	<div class="bbsjumpctrl"><{$forum_jumpbox}></div>
+	<ul class="footpost">
+		<li><{$forum_post_or_register}></li>
+	</ul>
+	<{if $viewer_is_admin == true}>
+	<div class="adminctrl">&nbsp;<{$topic_lock_image}>&nbsp;<{$topic_move_image}>&nbsp;<{$topic_delete_image}>&nbsp;<{$topic_sticky_image}>&nbsp;</div>
+	<{/if}>
+</div>
+
+<hr class="notification" />
+</div>
+<{include file='db:system_notification_select.html'}>
+<!-- end module contents -->

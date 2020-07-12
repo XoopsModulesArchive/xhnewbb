@@ -1,0 +1,84 @@
+<!-- start module contents -->
+<div class="xhnewbb">
+<h1><{$lang_searchresults}></h1>
+
+<div class="breadcrumbs"><a href="<{$mod_url}>/index.php"><{$lang_forumindex}></a>&nbsp;-&nbsp;<a href="<{$mod_url}>/viewallforum.php"><{$lang_alltopicsindex}></a>&nbsp;&gt;&nbsp;<a href="<{$mod_url}>/search.php"><{$lang_search}></a>&nbsp;&gt;&nbsp;<{$lang_searchresults}></div>
+
+<table class="outer searchresult">
+<tr>
+	<th><{$lang_forum}></th>
+	<th><{$lang_topic}></th>
+	<th><{$lang_author}></th>
+	<th><{$lang_replies}></th>
+	<th><{$lang_views}></th>
+	<th><{$lang_possttime}></th>
+</tr>
+
+<!-- start search results -->
+<{section name=i loop=$results}>
+<tr>
+	<td class="even"><a href="<{$mod_url}>/viewforum.php?forum=<{$results[i].forum_id}>"><{$results[i].forum_name}></a></td>
+	<td class="odd topics"><a href="<{$mod_url}>/viewtopic.php?topic_id=<{$results[i].topic_id}>"><{$results[i].topic_title}></a></td>
+	<td class="even"><a href="<{$xoops_url}>/userinfo.php?uid=<{$results[i].user_id}>"><{$results[i].user_name}></a></td>
+	<td class="odd"><{$results[i].topic_replies}></td>
+	<td class="even"><{$results[i].topic_views}></td>
+	<td class="odd"><{$results[i].post_time}></td>
+</tr>
+<{/section}>
+<!-- end search results -->
+</table>
+
+<form name="Search" action="<{$mod_url}>/search.php" method="post">
+<table class="outer search">
+<tr>
+	<th><label for="keywords"><{$lang_keywords}></label></th>
+	<td class="even">
+		<input type="text" name="term" id="keywords" size="48" />
+		<br />
+		<input type="radio" name="addterms" value="any" id="terms_any" checked="checked" />
+		<label for="terms_any"><{$lang_searchany}></label>
+		&nbsp;
+		<input type="radio" name="addterms" value="all" id="terms_all" />
+		<label for="terms_all"><{$lang_searchall}></label>
+	</td>
+</tr>
+<tr>
+	<th><{$lang_searchin}></th>
+	<td class="even">
+		<input type="radio" name="searchboth" value="title" id="searchin_title" />
+		<label for="searchin_title"><{$lang_subject}></label>
+		&nbsp;
+		<input type="radio" name="searchboth" value="text" id="searchin_text" />
+		<label for="searchin_text"><{$lang_body}></label>
+		&nbsp;
+		<input type="radio" name="searchboth" value="both" id="searchin_both" checked="checked" />
+		<label for="searchin_both"><{$lang_subject}> &amp; <{$lang_body}></label>
+	</td>
+</tr>
+<tr>
+	<th><label for="searchin_author"><{$lang_author}></label></th>
+	<td class="even"><input type="text" name="search_username" id="searchin_author" /></td>
+</tr>
+<tr>
+	<th><{$lang_sortby}></th>
+	<td class="even">
+		<input type="radio" name="sortby" value="p.post_time desc" checked="checked" id="sortby_posttime_desc" />
+		<label for="sortby_posttime_desc"><{$lang_date}></label>
+		&nbsp;
+		<input type="radio" name="sortby" value="t.topic_title" id="sortby_topictitle_asc" />
+		<label for="sortby_topictitle_asc"><{$lang_topic}></label>
+		&nbsp;
+		<input type="radio" name="sortby" value="f.forum_name" id="sortby_forumname_asc" />
+		<label for="sortby_forumname_asc"><{$lang_forum}></label>
+		&nbsp;
+		<input type="radio" name="sortby" value="u.uname" id="sortby_uname_asc" />
+		<label for="sortby_uname_asc"><{$lang_username}></label>
+</td>
+</tr>
+<tr>
+	<td class="head" colspan="2" align="center"><input type="submit" name="submit" value="<{$lang_search}>" /></td>
+</tr>
+</table>
+</form>
+</div>
+<!-- end module contents -->

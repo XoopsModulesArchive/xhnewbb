@@ -1,0 +1,21 @@
+<div class="xhnewbb">
+<h1><{$smarty.const._MD_XHNEWBB_CUTPASTEPOSTS}></h1>
+<div class="breadcrumbs"><a href="<{$xoops_url}>/modules/xhnewbb/index.php"><{$forum_index_title}></a>&nbsp;-&nbsp;<a href="<{$mod_url}>/viewallforum.php"><{$lang_alltopicsindex}></a></div>
+
+<div id="forum_reference" class="outer">
+	<div class="head"><{$reference_subject}></div>
+	<div class="even"><{$smarty.const._MD_XHNEWBB_BY}> <{$reference_name}> <{$smarty.const._MD_XHNEWBB_ON}> <{$reference_date}></div>
+	<div class="odd"><{$reference_message}></div>
+	<div class="even"><{$smarty.const._MD_XHNEWBB_CHILDREN_COUNT}> : <{$children_count}></div>
+</div>
+
+<form name="cutpasteposts" id="cutpasteposts" action="cutpasteposts.php?post_id=<{$post_id}>" method="post">
+
+	<label for="pid"><{$smarty.const._MD_XHNEWBB_CUTPASTEPOSTS_DEST}></label>
+	<input type="text" name="pid" id="pid" size="12" maxlength="12" value="0" style="ime-mode:disabled;text-align:right;" />
+	<input type="submit" name="cutpastepostsok" id="cutpastepostsok" value="<{$smarty.const._SUBMIT}>" />
+	<br />
+	<{$smarty.const._MD_XHNEWBB_CUTPASTEPOSTSDSC}>
+
+</form>
+</div>

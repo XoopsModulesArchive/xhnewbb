@@ -1,0 +1,53 @@
+<!-- start comment post -->
+<tr>
+	<td class="head"><a id="forumpost<{$topic_post.post_id}>"></a> <{$topic_post.poster_uname}></td>
+	<td class="head postdate"><{$lang_postedon}><{$topic_post.post_date}></td>
+</tr>
+<tr>
+<{if $topic_post.poster_uid != 0}>
+	<td class="odd posterinfo">
+	<dl>
+	<dt><{$topic_post.poster_rank_title}></dt>
+		<dd><{$topic_post.poster_rank_image}></dd>
+	</dl>
+	<img class="comUserImg" src="<{$xoops_upload_url}>/<{$topic_post.poster_avatar}>" alt="" />
+	<ul class="userstatus">
+		<li><{$lang_joined}>: <{$topic_post.poster_regdate}></li>
+		<li><{$lang_from}>: <{$topic_post.poster_from}></li>
+		<li><{$lang_posts}>: <{$topic_post.poster_postnum}></li>
+		<{if $topic_post.poster_status}><li><{$topic_post.poster_status}></li><{/if}>
+	</ul>
+	</td>
+<{else}>
+	<td class="odd"></td>
+<{/if}>
+
+	<td class="odd combody">
+	<dl>
+	<dt class="comTitle"><{$topic_post.post_title}></dt>
+		<dd class="comText"><{$topic_post.post_text}></dd>
+	</dl>
+	</td>
+</tr>
+<tr>
+	<td class="even" colspan="2">
+	<div class="editctrl">
+
+	<{if $topic_post.can_edit}>
+	<a href="<{$mod_url}>/edit.php?post_id=<{$topic_post.post_id}>&amp;viewmode=<{$topic_viewmode}>&amp;order=<{$topic_order}>"  class="edit"><{$lang_edit}></a>
+	<{/if}>
+
+	<{if $topic_post.can_delete}>
+	<a href='<{$mod_url}>/delete.php?post_id=<{$topic_post.post_id}>&amp;viewmode=<{$topic_viewmode}>&amp;order=<{$topic_order}>' class='delete'><{$lang_delete}></a>
+	<{/if}>
+
+	<{if $topic_post.can_reply}>
+	<a href='<{$mod_url}>/reply.php?post_id=<{$topic_post.post_id}>&amp;viewmode=<{$topic_viewmode}>&amp;order=<{$topic_order}>' class='reply'><{$lang_reply}></a>
+	<{/if}>
+	</div>
+
+	<{if $isadminormod}><a href="cutpasteposts.php?post_id=<{$topic_post.post_id}>"><img src="<{$mod_url}>/images/adminicon_cutpaste.gif" alt="<{$smarty.const._MD_XHNEWBB_CUTPASTEPOSTS}>" /></a><{/if}>
+
+	</td>
+</tr>
+<!-- end comment post -->

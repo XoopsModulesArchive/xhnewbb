@@ -1,0 +1,257 @@
+[mlimg]
+[xlang:en]
+
+1.31 (2007/03/12)
+- marked as the last and stable version
+- added language
+-- portuguesebr (thx X-TRAD)
+
+1.31beta (2006/11/04)
+- modified Cube 2.1 compatibility
+- fixed small typo in cutpasteposts.php (thx plusangel)
+- fixed sitemap plugin (thx Foxy)
+
+1.30 (2006/10/06)
+- released as a stable version
+- modified templates from 1.30beta09 (thx jidaikobo)
+
+1.30beta (2006/09/13)
+- rebuilt templates fundamentally (special thx jidaikobo!)
+- changed cat_order from varchar into smallint (thx Ujiki.oO)
+- modified behaviors of the marking feature
+- added names into topic_icons
+- fixed original bug notification on post
+- fixed original bug signature can be turned on always
+- fixed original bug double htmlspecialchars with subject
+- modified posting form from xoopsform into a template
+- removed a doubltful option "post anonymously"
+- added identical string into xoops_pagetitle 
+- rebuilt almost all codes about posting
+- modified reply features can be used even in preview
+- moved mark and solved into posting options.
+- added configuration of self edition allow/disallow and time limitation
+- added configuration of self deletion allow/disallow and time limitation
+- added configuration URI of module's CSS
+- added cut&paste posts (only for admins or moderators)
+- modified delete.php using template
+- modified languages
+-- tchinese (thx chia)
+-- utf8_tw (thx chia)
+- fixed typo in post.php (thx OneOfTen)
+- fixed post icons inconsistency
+- modified strange spec of "move" (thx Foxy)
+- fixed wrong link to userinfo from guest's name
+
+1.23 (2006/06/16)
+- fixed a bug private posts are notified into unauthorized users (thx ayumi)
+
+1.22 (2006/06/01)
+- added show context for "xoops search"
+- rewrote search.inc.php fully
+- modified treating $queryarray for security 1.22a
+- modified viewallforum.php displaying appropriate private topics 1.22b
+- fixed typo about permission in viewforum.php 1.22b
+- added language files 1.22c
+-- tchinese (thx chia)
+-- utf8_tw (thx chia)
+
+1.21 (2006/05/24)
+- rewrote search.php fully (templates are modified radically)
+- modified private topics can be hit in xhnewbb/search.php 
+- modified performance of queries with private topics
+- fixed a typo in viewtopic_*.html (thx jidaikobo) 1.21a
+
+1.20 (2006/05/23) UPDATE MODULE ESSENTIALLY
+- added a kind of privileges between private forums and grous
+- modified private topics can be hit in globa search (not yet xhnewbb/search.php)
+- modified blocks displaying private forums's title (Don't enable block cache with such purposes)
+- fixed typo in xhnewbb_main_block.html (thx chika3)
+
+1.17 (2006/05/10)
+- fixed typo in viewtopic.php for guest access (thx fabi) 1.17a
+- added french language file (thx marco)
+- changed error handling from redirect_header() to die()
+- fixed small typos added as xhnewbb
+- fixed newbb origined large and many bugs :-)
+-- a moderator can moderate any forums
+-- anyone can post into any locked topics
+-- anyone can read any posts in the private forums
+
+1.16 (2006/3/11)
+- fixed a language constant (thx marco)
+- added ALTER TALBE on update if forum table was from newbb
+- fixed missing "once" with including pagenav (thx hananoko) 1.16a
+
+1.15 (2006/1/25)
+- fixed the original bug in search.php
+- added a feature of category limitation into all topic view
+- added a feature of category limitation into the block
+- fixed a bug in post preview
+- modified some missing alt , title int <img>
+- modified the feature of solved can be turned off
+- modified the feature of marking can be turned off
+- fixed the original bug anyone can see private forum in index.php
+- modified the URI of links for posts in viewforum.php and viewallforum.php
+- added configuration of page break number for viewallforum.php
+
+
+1.14 (2006/01/05)
+- added an option selecting title of each topics in block
+- added one more the same block for editing templates
+- added mytplsadmin
+- updated mymenu and myblocksadmin
+- fixed some doubtful codes
+- added an option "allow img tag in body"(go to config of xhnewbb)
+- added an option "allow img tag in signature"(go to config of xhnewbb)
+- modified module's icon (thx argon)
+
+
+1.13 (2005/08/27)
+
+- fixed PHP_SELF XSS
+- modified the compatibilities with XOOPS 2.2
+- fixed some slight bugs
+
+
+1.12 (2005/07/13)
+
+- added "supporting" features
+- added "marking topics"
+- modified not to use cookie but to use DB for storing "already read" or not
+- fixed many bugs origined from newbb
+
+
+
+[/xlang:en]
+[xlang:ja]
+
+
+1.31 (2007/03/12)
+- 最終版としてのリリース
+- このバージョンをもって、開発・サポートを終了とします
+- 言語ファイル追加
+-- portuguesebr (thx X-TRAD)
+
+1.31beta (2006/11/04)
+- Cube 2.1用にmymenuを入れ替えた
+- cutpasteposts.php 内のtypo修正 (thx plusangel)
+- サイトマッププラグインがおかしかったのを修正 (thx Foxy)
+
+1.30 (2006/10/06)
+- 安定版としてのリリース
+- 1.30betaよりテンプレートの微調整 (thx jidaikobo)
+
+1.30beta (2006/09/13)
+- テンプレートをフルスクラッチ (special thx jidaikobo!)
+- cat_order がなぜか varchar となっていたのを smallint に変更 (thx Ujiki.oO)
+- 注目トピック機能の動作修正
+- トピックアイコンに名前をつけた
+- 投稿時のイベント通知処理のオリジナルバグを修正
+- 常に署名を付与可能となっていたオリジナルバグを修正
+- 題名にhtmlspecialcharsが２重にかかっていたオリジナルバグを修正
+- 投稿画面をテンプレート化した（大きく手を入れたのでエンバグしてそう）
+- 「ゲストとして投稿する」という怪しげなオプションを削除:-P
+- xoops_pagetitle に可能な限り意味のある文字列をアサインするようにした
+- 投稿関連をほぼフルスクラッチ
+- previewでもreplyモードが有効になるように変更
+- 注目トピックおよび解決済機能を投稿オプションに変更
+- モジュール単位での自己編集ON/OFFおよび時間制限
+- モジュール単位での自己削除ON/OFFおよび時間制限
+- CSSファイルの位置(URI)指定追加
+- 投稿の切り貼り機能実装（管理者／モデレータ専用）
+- 削除画面のテンプレート化
+- 言語ファイル更新
+-- tchinese (thx chia)
+-- utf8_tw (thx chia)
+- 編集でも投稿数が上がってしまうエンバグを修正 (thx OneOfTen)
+- 投稿アイコンの画像参照先がバラバラだったのを修正
+- 前のトピック・次のトピックが時間指定でされるおかしな仕様を修正 (thx Foxy)
+- トピック一覧画面でゲストにもuserinfoへのリンクが生成されるバグを修正
+
+1.23 (2006/06/16)
+- プライベートフォーラムへの投稿がイベント通知されてしまうバグの修正 (thx ayumi)
+
+1.22 (2006/06/01)
+- XOOPS検索モジュールの本文表示対応
+- search.inc.php まるまる書き直し
+- 検索文字列の扱いを修正（正しさよりも安全性を重視） 1.22a
+- トピック一覧でもプライベートフォーラムの中身を適切に表示するように修正 1.22b
+- viewforum.php の権限チェックミスを修正 1.22b
+- 言語ファイル追加 1.22c
+-- tchinese (thx chia)
+-- utf8_tw (thx chia)
+
+1.21 (2006/05/24)
+- search.php まるまる書き直し（テンプレートも大きく修正）
+- search.php プライベートフォーラム対応
+- プライベートフォーラム関連クエリの高速化
+- テンプレートのURLエンバグ修正 (thx jidaikobo) 1.21a
+
+1.20 (2006/05/23) モジュールアップデート必須
+- プライベートフォーラムに、グループ毎の権限設定を追加
+- XOOPSのグローバル検索機能で権限があればプライベートフォーラムの内容にヒットするように改善（newbb本来の検索機能については未実装）
+- 投稿一覧ブロックで、プライベートフォーラムが権限通りに表示されるように修正。ただし、プライベートフォーラムもブロックに載せる場合はブロックキャッシュを有効にしないこと。
+- xhnewbb_main_block.html内のtypo修正 (thx chika3)
+
+1.17 (2006/5/10)
+- ゲストアクセスでトピック表示がおかしかったのを修正 (thx fabi) 1.17a
+- フランス語ファイル追加 (thx marco)
+- エラー処理のredirect_header()の多くをdie()に変更
+- xhnewbb追加部分の細かなtypo修正
+- newbb由来の多数のバグの大改修（以下はその一部に過ぎません:-)）
+-- あるモデレータが、全フォーラムを編集できてしまう
+-- ロックトピックでも自由に投稿できてしまう
+-- プライベートフォーラムの中身をメンバー以外が自由に閲覧できてしまう
+
+1.16 (2006/3/11)
+- 直書き文字定数を一部修正 (thx marco)
+- newbbからデータを持ち込んだ時のALTER TABLE追加
+- pagenav読込部分をinclude_onceに修正 (thx hananoko) 1.16a
+
+1.15 (2006/1/25)
+- search.php で投稿者だけを指定するとSQLエラーになるオリジナルバグの修正
+- カテゴリー毎のトピック一覧機能
+- ブロックでのカテゴリー絞り込み機能
+- 外部画像禁止状態でもプレビューで画像表示されていたバグの修正
+- 一部の画像へのalt, title属性追記
+- 解決済機能のON/OFF設定追加
+- トピックマーク機能のON/OFF設定追加
+- index.phpで権限のないプライベートフォーラムが見えてしまうオリジナルバグの修正
+- 一覧画面等でのリンクをなるべくシンプルな形で統一し、最新投稿一覧とまったく同じ形式のURIも用意するようにした（ゲストの既読情報はブラウザにお任せする、という意味）
+- トピック一覧画面でのページブレイク数を指定できるようにした
+
+1.14 (2006/01/05)
+- 投稿ブロックに、表示タイトルを最終投稿タイトルとするかトピックタイトルにするかのオプションを追加（テンプレートも変更になっている）
+- テンプレートの使い分けを可能とするため、投稿ブロックの初期数を２にした。
+- mytplsadmin 導入
+- mymenu, myblocksadmin 更新
+- 穴っぽいコードの修正追加
+- 本文内画像の表示設定追加（デフォルトは不許可なので、許可する場合は一般設定で）
+- 署名内画像の表示設定追加（デフォルトは不許可なので、許可する場合は一般設定で）
+- モジュールアイコンをargonさん謹製のものに変更 (thx argon)
+
+
+1.13 (2005/08/27)
+
+- PHP_SELF XSSの対応
+- XOOPS 2.2 対応（多分動くはず）
+- その他、細かなバグ潰し
+
+
+1.12 (2005/07/13)
+
+- サポート機能の大幅充実
+- トピックマーク機能
+- Cookie利用の全面停止・既読情報のDB保存
+- 穴っぽいコードの修正
+- その他、数え切れないオリジナルバグ潰し
+
+
+1.11以前
+- newbbからxhnewbbへブランチ
+- mymenu導入
+- myblocksadmin導入
+- ゲスト投稿時に、本文内に名前を挿入できる機能の追加
+- 穴につながりそうなコードの積極的な「潰し」
+
+[/xlang:ja]
